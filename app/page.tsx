@@ -7,6 +7,9 @@ import ContactForm from "./components/ContactForm";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const whatsappLink =
+    "https://wa.me/2348164980583?text=Hello%20Emmanuella,%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20website%20project%20with%20you.";
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-950 text-white">
       {/* NAVBAR */}
@@ -19,7 +22,7 @@ export default function Home() {
             Emmanuella<span className="text-white">.</span>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* DESKTOP MENU */}
           <div className="hidden items-center gap-7 md:flex">
             <a
               href="#about"
@@ -64,7 +67,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="rounded-lg border border-slate-700 px-3 py-2 text-xl text-slate-200 md:hidden"
@@ -74,7 +77,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* MOBILE MENU */}
         {menuOpen && (
           <div className="border-t border-slate-800 bg-slate-950 px-5 py-5 md:hidden">
             <div className="flex flex-col gap-4">
@@ -135,10 +138,9 @@ export default function Home() {
         id="home"
         className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:py-20"
       >
-        {/* Hero Text */}
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
-            <span className="h-2 w-2 rounded-full bg-green-400"></span>
+            <span className="h-2 w-2 rounded-full bg-green-400" />
             Available for freelance work
           </div>
 
@@ -148,7 +150,9 @@ export default function Home() {
 
           <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
             I build modern websites and{" "}
-            <span className="text-cyan-400">secure web applications.</span>
+            <span className="text-cyan-400">
+              secure web applications.
+            </span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
@@ -157,7 +161,8 @@ export default function Home() {
             digital experiences with security in mind.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          {/* HERO BUTTONS */}
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a
               href="#projects"
               className="rounded-lg bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 transition hover:bg-cyan-300"
@@ -181,7 +186,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Quick Social Links */}
+          {/* SOCIAL LINKS */}
           <div className="mt-8 flex flex-wrap gap-5 text-sm">
             <a
               href="https://github.com/elladaniel112"
@@ -209,7 +214,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/2348164980583"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 transition hover:text-cyan-400"
@@ -219,7 +224,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Profile Image */}
+        {/* PROFILE IMAGE */}
         <div className="flex justify-center lg:justify-end">
           <div className="relative h-[430px] w-[320px] overflow-hidden rounded-[2rem] border border-cyan-400/40 bg-slate-900 shadow-2xl shadow-cyan-400/10 sm:h-[500px] sm:w-[380px]">
             <Image
@@ -234,6 +239,7 @@ export default function Home() {
 
             <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/10 bg-slate-950/80 p-4 backdrop-blur">
               <p className="font-bold">Emmanuella Daniel</p>
+
               <p className="text-sm text-cyan-400">
                 Web Developer & Cybersecurity Student
               </p>
@@ -326,14 +332,16 @@ export default function Home() {
           </h2>
 
           <div className="mt-10 grid gap-7 lg:grid-cols-2">
-            {/* CyberGuard */}
+            {/* CYBERGUARD */}
             <article className="rounded-2xl border border-slate-800 bg-slate-950 p-7 transition hover:-translate-y-1 hover:border-cyan-400/40">
               <div className="mb-5 flex items-center justify-between">
                 <span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-400">
                   Cybersecurity
                 </span>
 
-                <span className="text-sm text-slate-500">Project 01</span>
+                <span className="text-sm text-slate-500">
+                  Project 01
+                </span>
               </div>
 
               <h3 className="text-2xl font-bold">CyberGuard</h3>
@@ -389,7 +397,9 @@ export default function Home() {
                   Fashion / E-commerce
                 </span>
 
-                <span className="text-sm text-slate-500">Project 02</span>
+                <span className="text-sm text-slate-500">
+                  Project 02
+                </span>
               </div>
 
               <h3 className="text-2xl font-bold">DEELLAS</h3>
@@ -401,16 +411,19 @@ export default function Home() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {["Next.js", "React", "Tailwind CSS", "Responsive UI"].map(
-                  (item) => (
-                    <span
-                      key={item}
-                      className="rounded-md bg-slate-900 px-3 py-1 text-xs text-slate-300"
-                    >
-                      {item}
-                    </span>
-                  )
-                )}
+                {[
+                  "Next.js",
+                  "React",
+                  "Tailwind CSS",
+                  "Responsive UI",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-md bg-slate-900 px-3 py-1 text-xs text-slate-300"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -471,7 +484,9 @@ export default function Home() {
                 key={service.title}
                 className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 transition hover:-translate-y-1 hover:border-cyan-400/40"
               >
-                <h3 className="text-xl font-bold">{service.title}</h3>
+                <h3 className="text-xl font-bold">
+                  {service.title}
+                </h3>
 
                 <p className="mt-4 leading-7 text-slate-400">
                   {service.text}
@@ -531,7 +546,9 @@ export default function Home() {
                   ✓
                 </div>
 
-                <h3 className="text-xl font-bold">{item.title}</h3>
+                <h3 className="text-xl font-bold">
+                  {item.title}
+                </h3>
 
                 <p className="mt-3 leading-7 text-slate-400">
                   {item.text}
@@ -560,13 +577,14 @@ export default function Home() {
 
           <ContactForm />
 
-          {/* Social Links */}
+          {/* CONTACT LINKS */}
           <div className="mt-10">
             <p className="mb-5 text-sm text-slate-500">
               You can also reach me through:
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
+              {/* GITHUB */}
               <a
                 href="https://github.com/elladaniel112"
                 target="_blank"
@@ -576,6 +594,7 @@ export default function Home() {
                 GitHub
               </a>
 
+              {/* LINKEDIN */}
               <a
                 href="https://www.linkedin.com/in/emmanuella-daniel-80b049409"
                 target="_blank"
@@ -585,6 +604,7 @@ export default function Home() {
                 LinkedIn
               </a>
 
+              {/* EMAIL */}
               <a
                 href="mailto:emmanuelladaniel112@gmail.com"
                 className="rounded-lg border border-slate-700 px-5 py-3 font-semibold transition hover:border-cyan-400 hover:text-cyan-400"
@@ -592,8 +612,9 @@ export default function Home() {
                 Email Me
               </a>
 
+              {/* WHATSAPP */}
               <a
-                href="https://wa.me/2348164980583"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-lg border border-slate-700 px-5 py-3 font-semibold transition hover:border-cyan-400 hover:text-cyan-400"
@@ -609,7 +630,9 @@ export default function Home() {
       <footer className="border-t border-slate-800 bg-slate-950 px-5 py-10 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
           <div>
-            <p className="font-bold text-white">Emmanuella Daniel</p>
+            <p className="font-bold text-white">
+              Emmanuella Daniel
+            </p>
 
             <p className="mt-1 text-sm text-slate-500">
               Web Developer • Cybersecurity Student
@@ -617,6 +640,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-5 text-sm">
+            {/* GITHUB */}
             <a
               href="https://github.com/elladaniel112"
               target="_blank"
@@ -626,6 +650,7 @@ export default function Home() {
               GitHub
             </a>
 
+            {/* LINKEDIN */}
             <a
               href="https://www.linkedin.com/in/emmanuella-daniel-80b049409"
               target="_blank"
@@ -635,6 +660,7 @@ export default function Home() {
               LinkedIn
             </a>
 
+            {/* EMAIL */}
             <a
               href="mailto:emmanuelladaniel112@gmail.com"
               className="text-slate-400 transition hover:text-cyan-400"
@@ -642,8 +668,9 @@ export default function Home() {
               Email
             </a>
 
+            {/* WHATSAPP */}
             <a
-              href="https://wa.me/2348164980583"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 transition hover:text-cyan-400"
